@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 interface IUpProducts {
   id: string;
   slug: string;
@@ -44,7 +46,7 @@ const TwoSction = async () => {
 
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {priceUp.map((product) => (
-            <div
+            <Link href={`/detils/${product.id}`}
               key={product.id}
               className="rounded-[28px] border border-[#dfe7df] bg-[#fafcf9] p-5 transition-all duration-300 hover:border-green-300 hover:shadow-md sm:p-7"
             >
@@ -83,7 +85,7 @@ const TwoSction = async () => {
                   <span>{product.change.pct}</span>
                 </span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
