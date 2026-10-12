@@ -52,7 +52,8 @@ if (data) {
 
   const handleGoogleSignIn = async () =>{
     const { error} = await authClient.signIn.social({
-      provider: 'google'
+      provider: 'google',
+      callbackURL: "/",
     })
     if(error){
       toast.error("Google দিয়ে Sign In করা যায়নি");
@@ -61,7 +62,8 @@ if (data) {
 
   const handleGitHubSingIn = async () => {
     const {error} = await authClient.signIn.social({
-        provider: "github"
+        provider: "github",
+        callbackURL: "/",
     })
     if(error){
       toast.error("GitHub দিয়ে Sign In করা যায়নি");
@@ -147,7 +149,6 @@ if (data) {
                 type="button"
                 variant="secondary"
                 onClick={handleGoogleSignIn}
-                onPress={() => toast.info("Google sign-in সেটআপ করতে হবে")}
                 className="h-10 rounded-lg border border-[#e0e8e0] bg-transparent px-2 text-sm font-semibold text-[#202a22]"
               >
                 <span className="text-lg font-bold text-[#4285f4]">G</span>
@@ -159,9 +160,7 @@ if (data) {
                 type="button"
                 className="flex h-10 w-full items-center justify-center gap-2 rounded-lg border border-[#dce5dc] bg-white text-sm font-semibold text-[#202a22] hover:bg-gray-50"
                 onClick={handleGitHubSingIn}
-                onPress={() => {
-                  toast.info("GitHub login setup is required");
-                }}
+                
               >
                 <FaGithub size={18} />
                 Continue with GitHub

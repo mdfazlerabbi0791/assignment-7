@@ -67,6 +67,10 @@ export default function SignUpPage() {
   };
 
 
+
+
+
+
   return (
     <main className="min-h-screen bg-[#f0f5f0] px-3 py-6 text-[#202a22] sm:px-5 sm:py-8">
       <div className="mx-auto w-full max-w-lg">
@@ -170,7 +174,11 @@ export default function SignUpPage() {
               <Button
                 type="button"
                 variant="secondary"
-                onPress={() => toast.info("Google sign-in সেটআপ করতে হবে")}
+                onPress={() => 
+                  toast.info("Google sign-up সেটআপ করতে হবে"
+
+                  )
+                }
                 className="h-10 rounded-lg border border-[#e0e8e0] bg-transparent px-2 text-sm font-semibold text-[#202a22]"
               >
                 <span className="text-lg font-bold text-[#4285f4]">G</span>
@@ -182,6 +190,7 @@ export default function SignUpPage() {
                 className="flex h-10 w-full items-center justify-center gap-2 rounded-lg border border-[#dce5dc] bg-white text-sm font-semibold text-[#202a22] hover:bg-gray-50"
                 onPress={() => {
                   toast.info("GitHub login setup is required");
+                 
                 }}
               >
                 <FaGithub size={18} />
