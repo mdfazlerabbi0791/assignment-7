@@ -1,4 +1,8 @@
 import { Suspense } from "react";
+import { headers } from "next/headers";
+import { redirect } from "next/navigation";
+import { auth } from "@/lib/auth";
+import Link from "next/link";
 
 interface IDetils{
     params: Promise<{
@@ -17,6 +21,14 @@ const DetilsPageOfProducts = ({params}: IDetils) => {
 async function DetilsPage ({params}: IDetils){
 
     const {detilsId} = await params
+
+    const session = await auth.api.getSession({
+    headers: await headers(),
+  });
+
+  if (!session) {
+    redirect("/signIn");
+  }
     const res = await fetch(`https://openapi.programming-hero.com/api/bazardor/products/${detilsId}`)
     const product = await res.json()
 
@@ -27,7 +39,7 @@ return (
 
       
       <div className="mb-7 flex flex-wrap items-center gap-2 text-sm text-gray-600">
-        <span>হোম</span>
+        <Link href={'/'}><span>হোম</span></Link>
         <span>›</span>
         <span>{product.categoryNameBn}</span>
         <span>›</span>
