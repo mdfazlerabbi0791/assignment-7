@@ -50,6 +50,25 @@ if (data) {
 }
   };
 
+  const handleGoogleSignIn = async () =>{
+    const { error} = await authClient.signIn.social({
+      provider: 'google'
+    })
+    if(error){
+      toast.error("Google দিয়ে Sign In করা যায়নি");
+    }
+  }
+
+  const handleGitHubSingIn = async () => {
+    const {error} = await authClient.signIn.social({
+        provider: "github"
+    })
+    if(error){
+      toast.error("GitHub দিয়ে Sign In করা যায়নি");
+    }
+  }
+
+
   return (
     <main className="min-h-screen bg-[#f0f5f0] px-3 py-6 text-[#202a22] sm:px-5 sm:py-8">
       <div className="mx-auto w-full max-w-lg">
@@ -127,6 +146,7 @@ if (data) {
               <Button
                 type="button"
                 variant="secondary"
+                onClick={handleGoogleSignIn}
                 onPress={() => toast.info("Google sign-in সেটআপ করতে হবে")}
                 className="h-10 rounded-lg border border-[#e0e8e0] bg-transparent px-2 text-sm font-semibold text-[#202a22]"
               >
@@ -138,6 +158,7 @@ if (data) {
               <Button
                 type="button"
                 className="flex h-10 w-full items-center justify-center gap-2 rounded-lg border border-[#dce5dc] bg-white text-sm font-semibold text-[#202a22] hover:bg-gray-50"
+                onClick={handleGitHubSingIn}
                 onPress={() => {
                   toast.info("GitHub login setup is required");
                 }}

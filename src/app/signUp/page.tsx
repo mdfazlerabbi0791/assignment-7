@@ -66,6 +66,7 @@ export default function SignUpPage() {
     }
   };
 
+
   return (
     <main className="min-h-screen bg-[#f0f5f0] px-3 py-6 text-[#202a22] sm:px-5 sm:py-8">
       <div className="mx-auto w-full max-w-lg">
