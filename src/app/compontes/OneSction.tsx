@@ -1,4 +1,4 @@
-interface IUpProducts {
+ export interface IUpProducts {
   id: string;
   slug: string;
   nameBn: string;
