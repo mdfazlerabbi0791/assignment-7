@@ -3,6 +3,7 @@ import BtnUpAndIn from "./BtnUpAndIn";
 import NavbarLink from "./NavbarLink";
 import { Suspense } from "react";
 import Marquee from "./Marquee";
+import Link from "next/link";
 
 const Header = () => {
   return (
@@ -10,7 +11,7 @@ const Header = () => {
       <div className="flex justify-between max-w-7xl mx-auto mt-2 mb-4">
         <div className="flex gap-2">
           <div className=" bg-[#05893e] flex justify-center py-3 px-3 rounded-2xl ">
-            <Image src={"/logo-icon.png"} alt="logo" width={30} height={30} />
+            <Link href={'/'}><Image src={"/logo-icon.png"} alt="logo" width={30} height={30} /></Link>
           </div>
           <div>
             <h1 className="font-extrabold text-xl">বাজার দর</h1>
