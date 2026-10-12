@@ -23,7 +23,7 @@ interface IUpProducts {
   }[];
 }
 
-const OneSction = async () => {
+const TwoSction = async () => {
   const res = await fetch(
     "https://openapi.programming-hero.com/api/bazardor/products",
   );
@@ -91,4 +91,4 @@ const OneSction = async () => {
   );
 };
 
-export default OneSction;
+export default TwoSction;
