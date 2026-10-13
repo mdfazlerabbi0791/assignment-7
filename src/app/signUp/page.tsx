@@ -66,6 +66,25 @@ export default function SignUpPage() {
     }
   };
 
+   const handleGoogleSignIn = async () =>{
+    const { error} = await authClient.signIn.social({
+      provider: 'google',
+      callbackURL: "/",
+    })
+    if(error){
+      toast.error("Google দিয়ে Sign Up করা যায়নি");
+    }
+  }
+
+  const handleGitHubSingIn = async () => {
+    const {error} = await authClient.signIn.social({
+        provider: "github",
+        callbackURL: "/",
+    })
+    if(error){
+      toast.error("GitHub দিয়ে Sign Up করা যায়নি");
+    }
+  }
 
 
 
@@ -174,11 +193,7 @@ export default function SignUpPage() {
               <Button
                 type="button"
                 variant="secondary"
-                onPress={() => 
-                  toast.info("Google sign-up সেটআপ করতে হবে"
-
-                  )
-                }
+                onClick={handleGoogleSignIn}
                 className="h-10 rounded-lg border border-[#e0e8e0] bg-transparent px-2 text-sm font-semibold text-[#202a22]"
               >
                 <span className="text-lg font-bold text-[#4285f4]">G</span>
@@ -188,10 +203,7 @@ export default function SignUpPage() {
               <Button
                 type="button"
                 className="flex h-10 w-full items-center justify-center gap-2 rounded-lg border border-[#dce5dc] bg-white text-sm font-semibold text-[#202a22] hover:bg-gray-50"
-                onPress={() => {
-                  toast.info("GitHub login setup is required");
-                 
-                }}
+                onClick={handleGitHubSingIn}
               >
                 <FaGithub size={18} />
                 Continue with GitHub
