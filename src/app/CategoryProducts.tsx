@@ -5,6 +5,7 @@
 
 import { useState } from "react";
 import { IUpProducts } from "@/app/compontes/OneSction";
+import Link from "next/link";
 
 interface IProps {
   products: IUpProducts[];
@@ -53,7 +54,7 @@ interface IProps {
 
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {sortedProducts.map((product) => (
-            <div
+            <Link href={`/detils/${product.id}`}
               key={product.id}
               className="rounded-[26px] border border-[#dfe7df] bg-[#fafcf9] p-6 hover:shadow-md"
             >
@@ -92,7 +93,7 @@ interface IProps {
                   {product.change.pct}
                 </span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
