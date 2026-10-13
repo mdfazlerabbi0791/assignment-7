@@ -1,9 +1,5 @@
 import Link from "next/link";
 
-
-
-
-
 const FirstHomePage = () => {
   return (
     <section className="max-w-7xl mx-auto overflow-hidden bg-[#f8fbf8] my-10 rounded-3xl">
@@ -24,10 +20,13 @@ const FirstHomePage = () => {
             বাজারভিত্তিক বিস্তারিত, গড়, সর্বনিম্ন-সর্বাধিক এবং
             দামের পরিবর্তন এক জায়গায়।
           </p>
-          <Link href={'/ThereSction'}>
+          
+          
+
           <button className="mt-7 rounded-xl bg-[#07883f] px-7 py-4 text-base font-bold text-white shadow-[0_5px_0_#b7d9c2] transition-all duration-200 hover:-translate-y-1 hover:bg-[#067535] hover:shadow-lg sm:mt-9 sm:px-9 sm:text-lg">
             সব পণ্য দেখুন
-          </button></Link>
+          </button>
+          
         </div>
 
         {/* Right Image */}
