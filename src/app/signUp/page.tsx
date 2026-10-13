@@ -74,6 +74,8 @@ export default function SignUpPage() {
     if(error){
       toast.error("Google দিয়ে Sign Up করা যায়নি");
     }
+
+    toast.success("Google Sign Up সফল হয়েছে!");
   }
 
   const handleGitHubSingIn = async () => {
@@ -84,10 +86,9 @@ export default function SignUpPage() {
     if(error){
       toast.error("GitHub দিয়ে Sign Up করা যায়নি");
     }
+
+    toast.success("GitHub Sign Up সফল হয়েছে!");
   }
-
-
-
 
 
   return (

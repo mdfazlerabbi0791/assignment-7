@@ -58,6 +58,8 @@ if (data) {
     if(error){
       toast.error("Google দিয়ে Sign In করা যায়নি");
     }
+
+    toast.success("Google Sign In সফল হয়েছে!");
   }
 
   const handleGitHubSingIn = async () => {
@@ -68,6 +70,8 @@ if (data) {
     if(error){
       toast.error("GitHub দিয়ে Sign In করা যায়নি");
     }
+
+    toast.success("GitHub Sign In সফল হয়েছে!");
   }
 
 
