@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { headers } from "next/headers";
-import { redirect } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { auth } from "@/lib/auth";
 import Link from "next/link";
 
@@ -31,6 +31,11 @@ async function DetilsPage ({params}: IDetils){
   }
     const res = await fetch(`https://openapi.programming-hero.com/api/bazardor/products/${detilsId}`)
     const product = await res.json()
+
+
+    if(!product){
+      notFound()
+    }
 
 
 return (

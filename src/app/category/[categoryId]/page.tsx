@@ -3,6 +3,7 @@
 
 import CategoryProducts from "@/app/CategoryProducts";
 import { IUpProducts } from "@/app/compontes/OneSction";
+import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
 
@@ -29,6 +30,10 @@ async function CategoryContent({ params }: IParams) {
   );
 
   const data: IUpProducts[] = await res.json();
+
+  if(!data){
+    notFound()
+  }
 
   return <div>
     
