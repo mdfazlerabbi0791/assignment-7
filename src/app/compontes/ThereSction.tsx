@@ -31,7 +31,7 @@ const ThereSction = async () => {
   );
   const data: IUpProducts[] = await res.json();
   return (
-    <section className="bg-[#f1f5f1] px-4 py-10">
+    <section id="products" className="bg-[#f1f5f1] px-4 py-10">
       <div className="mx-auto max-w-7xl">
         <div className="mb-6">
           <h2 className="mb-2 flex items-center gap-2 text-xl font-bold text-[#202820] sm:text-2xl">
